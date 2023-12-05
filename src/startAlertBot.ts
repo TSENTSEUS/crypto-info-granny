@@ -44,7 +44,7 @@ export function startAlertBot() {
       const user = await findUser(ctx.chatMember.new_chat_member.user.id)
       if (user.subscriptionStatus === SubscriptionStatus.inactive) {
         try {
-          await alertBot.telegram.kickChatMember(ctx.chat.id, user.id)
+          // await alertBot.telegram.kickChatMember(ctx.chat.id, user.id)
         } catch (e) {
           console.error(`Error kicking newcomer ${user.id}`, e.message || e)
         }
